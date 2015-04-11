@@ -1,0 +1,246 @@
+{
+	"users" : 
+	{
+		"initial_user_setup" : {
+			"username" : "",
+			"password" : "",
+			"user_id" : ""
+		}
+	},
+	"user_games" : {
+		"initial_user_game_setup" : {
+			"last_saved_datetime" : 0,
+			"resources" : {
+				"gold" : 150,
+				"lumber" : 50,
+				"fur" : 0,
+				"salt" : 0
+			},
+			"buildings" : {
+				"merchant_hall" : 1,
+				"lumber_yard" : 1,
+				"trappers_hut" : 0,
+				"salt_mine" : 0
+			},
+			"business_contracts" : {
+				"merchant_contract" : 0,
+				"lumber_contract" : 0,
+				"fur_contract" : 0,
+				"salt_contract" : 0
+			},
+			"fleets" : {
+				"fleet_1" : {
+					"barge" : 1,
+					"sloop" : 0,
+					"cutter" : 0,
+					"schooner" : 0,
+					"brigantine" : 0,
+					"brig" : 0
+				}
+			}
+		}
+	},
+	"base_game_values" : {
+		"resources" : {
+			"gold" : {
+				"name" : "Gold",
+				"description" : "Shiny gold coins! Use your gold to buy shiny new things and expand your business!",
+				"initial_quantity" : 150,
+				"base_income_rate" : 1,
+				"base_value_in_gold" : 1
+			},
+			"lumber" : {
+				"name" : "Lumber",
+				"description" : "The most basic construction material, lumber is used in construction, shipbuilding, and nearly every trade.",
+				"initial_quantity" : 150,
+				"base_income_rate" : 15,
+				"base_value_in_gold" : 4
+			},
+			"fur" : {
+				"name" : "Fur",
+				"description" : "The plush pelts of animals make for warm clothing in the chilliest climates, and bright soft fur sells for high prices in European markets.",
+				"initial_quantity" : 0,
+				"base_income_rate" : 0,
+				"base_value_in_gold" : 10
+			},
+			"salt" : {
+				"name" : "Salt",
+				"description" : "A necessity for curing meats and making food taste better!",
+				"initial_quantity" : 0,
+				"base_income_rate" : 0,
+				"base_value_in_gold" : 1
+			}
+		},
+		"buildings" : {
+			"merchant_hall" : {
+				"name" : "Merchant Hall",
+				"description" : "A trading forum for local merchants, and a good source of profit when you charge a tidy fee for the use of this merchant headquarters.",
+				"increased_income_amount" : 20,
+				"gold_cost" : 250
+			},
+			"lumber_yard" : {
+				"name" : "Lumber Yard",
+				"description" : "A lumber yard collects the trees felled by local loggers, and the saw mill makes quick work of trimming down massive logs.",
+				"increased_income_amount" : 25,
+				"cost" : 150
+			},
+			"trappers_hut" : {
+				"name" : "Trapper's hut",
+				"description" : "A hunter goes by many names. A fur trapper makes more than that hunter.",
+				"increased_income_amount" : 15,
+				"cost" : 450
+			},
+			"salt_mine" : {
+				"name" : "Salt Mine",
+				"description" : "Though it is backbreaking work, a salt mine helps keep the population fed and happy.",
+				"increased_income_amount" : 20,
+				"cost" : 300
+			}
+		},
+		"business_contracts" : {
+			"merchant_contract" : {
+				"name" : "Merchant Contract",
+				"description" : "A contract with the local merchants and traders increases your profits by guaranteeing you a cut of their sales. Sign up a bunch of these bad boys and soon enough people will be paying you to pay you!",
+				"increased_income_percent" : 3,
+				"gold_cost" : 800
+			},
+			"lumber_contract" : {
+				"name" : "Lumber Contract",
+				"description" : "Lumber isn't a hard commodity to come by in the New World, but the more of these contracts you have, the less competitors you have!",
+				"increased_income_percent" : 8,
+				"cost" : 350
+			},
+			"fur_contract" : {
+				"name" : "Fur Contract",
+				"description" : "Mmm, fur. So soft and... furry.",
+				"increased_income_percent" : 4,
+				"cost" : 600
+			},
+			"salt_contract" : {
+				"name" : "Salt Contract",
+				"description" : "With a few of these contracts in hand, you'll be able to preserve all of the meat on the entire continent!",
+				"increased_income_percent" : 6,
+				"cost" : 450
+			}
+		},
+		"ships" : {
+			"barge" : {
+				"name" : "Barge",
+				"description" : "Good for carrying small amounts of cargo short distances. Not very useful on the open sea.",
+				"max_distance" : 90,
+				"cargo_capacity" : 80,
+				"speed" : 30,
+				"purchase_cost" : 500,
+				"sailing_cost" : 30
+			},
+			"sloop" : {
+				"name" : "Sloop",
+				"description" : "A small boat, capable of carrying a small amount of cargo and sailing along the coast.",
+				"max_distance" : 180,
+				"cargo_capacity" : 60,
+				"speed" : 70,
+				"purchase_cost" : 1500,
+				"sailing_cost" : 80
+			},
+			"cutter" : {
+				"name" : "Cutter",
+				"description" : "The cutter trades capacity for speed. It can make it along the coast in lightning time, but you won't get much cargo onto it.",
+				"max_distance" : 180,
+				"cargo_capacity" : 30,
+				"speed" : 120,
+				"purchase_cost" : 1800,
+				"sailing_cost" : 70
+			},
+			"schooner" : {
+				"name" : "Schooner",
+				"description" : "Faster and slightly larger than a sloop, the schooner is more suited to farther travel and trade.",
+				"max_distance" : 400,
+				"cargo_capacity" : 80,
+				"speed" : 100,
+				"purchase_cost" : 2200,
+				"sailing_cost" : 125
+			},
+			"brigantine" : {
+				"name" : "Brigantine",
+				"description" : "Bigger than a schooner but smaller than a brig, the brigantine is manoeuvrable while still being able to carry a decent amount of trade goods.",
+				"max_distance" : 1400,
+				"cargo_capacity" : 120,
+				"speed" : 90,
+				"purchase_cost" : 4500,
+				"sailing_cost" : 300
+			},
+			"brig" : {
+				"name" : "Brig",
+				"description" : "The brig is a larger sailing ship that can carry a higher amount of cargo, while still moving at a decent clip. Good for trade at farther distances!",
+				"max_distance" : 2000,
+				"cargo_capacity" : 180,
+				"speed" : 80,
+				"purchase_cost" : 6500,
+				"sailing_cost" : 450
+			}
+			
+		},
+		"locations" : {
+			"boston" : {
+				"name" : "Boston",
+				"description" : "Boston, Massachusetts. A bustling port town!",
+				"distance" : 165,
+				"resource_desires" : {
+					"lumber" : 5,
+					"fur" : 15,
+					"salt" : 5
+				}
+			},
+			"philadelphia" : {
+				"name" : "Philadelphia",
+				"description" : "Philadelphia, Pennsylvania. Just down the river from New York, this city is where it's all happenin'. It's practically revolutionary!",
+				"distance" : 70,
+				"resource_desires" : {
+					"lumber" : 5,
+					"fur" : 15,
+					"salt" : 5
+				}
+			},
+			"charleston" : {
+				"name" : "Charleston",
+				"description" : "Charleston, Carolina.",
+				"distance" : 380,
+				"resource_desires" : {
+					"lumber" : 3,
+					"fur" : 5,
+					"salt" : 18
+				}
+			},
+			"baltimore" : {
+				"name" : "Baltimore",
+				"description" : "Baltimore, Maryland.",
+				"distance" : 145,
+				"resource_desires" : {
+					"lumber" : 15,
+					"fur" : 5,
+					"salt" : 5
+				}
+			},
+			"kingston" : {
+				"name" : "Kingston",
+				"description" : "Kingston, Jamaica. The place where kings probably aren't born.",
+				"distance" : 1350,
+				"resource_desires" : {
+					"lumber" : 25,
+					"fur" : 2,
+					"salt" : 15
+				}
+			},
+			"bridgetown" : {
+				"name" : "Bridgetown",
+				"description" : "Bridgetown, Barbados. They must make bridges or something, right?",
+				"distance" : 1800,
+				"resource_desires" : {
+					"lumber" : 10,
+					"fur" : 35,
+					"salt" : 0
+				}
+			}
+		}
+	}
+}
