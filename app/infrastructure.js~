@@ -1,0 +1,7 @@
+define([
+	'angular',
+	'anguar-route',
+	'angular-loader',
+	'html5-boilerplate'
+], function() {
+});

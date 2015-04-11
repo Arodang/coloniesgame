@@ -1,0 +1,10 @@
+var baseApp = angular.module('baseApp', ['ngRoute']);
+
+baseApp.config(function($routeProvider){
+	$routeProvider
+	.when('/', {
+		templateUrl: 'user/login/login.html',
+		controller: 'loginController'
+	});
+});
+
