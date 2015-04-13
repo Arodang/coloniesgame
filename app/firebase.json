@@ -1,9 +1,0 @@
-{
-  "firebase": "blazing-inferno-2674",
-  "public": ".",
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ]
-}
