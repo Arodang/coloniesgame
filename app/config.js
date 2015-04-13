@@ -11,7 +11,7 @@ angular.module('myApp.config', [])
   .constant('loginRedirectPath', '/login')
 
   // your Firebase data URL goes here, no trailing slash
-  .constant('FBURL', 'https://blazing-inferno-2674.firebaseio.com')
+  .constant('FBURL', 'https://colonies-game.firebaseio.com')
 
   // double check that the app has been configured before running it and blowing up space and time
   .run(['FBURL', '$timeout', function(FBURL, $timeout) {
