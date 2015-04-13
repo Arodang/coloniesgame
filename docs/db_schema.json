@@ -11,31 +11,31 @@
 		"initial_user_game_setup" : {
 			"last_saved_datetime" : 0,
 			"resources" : {
-				"gold" : 150,
-				"lumber" : 50,
-				"fur" : 0,
-				"salt" : 0
+				"gold_count" : 150,
+				"lumber_count" : 50,
+				"fur_count" : 0,
+				"salt_count" : 0
 			},
 			"buildings" : {
-				"merchant_hall" : 1,
-				"lumber_yard" : 1,
-				"trappers_hut" : 0,
-				"salt_mine" : 0
+				"merchant_hall_count" : 1,
+				"lumber_yard_count" : 1,
+				"trappers_hut_count" : 0,
+				"salt_mine_count" : 0
 			},
 			"business_contracts" : {
-				"merchant_contract" : 0,
-				"lumber_contract" : 0,
-				"fur_contract" : 0,
-				"salt_contract" : 0
+				"merchant_contract_count" : 0,
+				"lumber_contract_count" : 0,
+				"fur_contract_count" : 0,
+				"salt_contract_count" : 0
 			},
 			"fleets" : {
 				"fleet_1" : {
-					"barge" : 1,
-					"sloop" : 0,
-					"cutter" : 0,
-					"schooner" : 0,
-					"brigantine" : 0,
-					"brig" : 0
+					"barge_count" : 1,
+					"sloop_count" : 0,
+					"cutter_count" : 0,
+					"schooner_count" : 0,
+					"brigantine_count" : 0,
+					"brig_count" : 0
 				}
 			}
 		}
