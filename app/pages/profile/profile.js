@@ -10,14 +10,6 @@
       var profile = $firebaseObject(fbutil.ref('users', user.uid));
       profile.$bindTo($scope, 'profile').then(function(ub) { unbind = ub; });
 
-      // expose logout function to scope
-      $scope.logout = function() {
-        if( unbind ) { unbind(); }
-        profile.$destroy();
-        Auth.$unauth();
-        $location.path('/login');
-      };
-
       $scope.changePassword = function(pass, confirm, newPass) {
         resetMessages();
         if( !pass || !confirm || !newPass ) {
