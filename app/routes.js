@@ -5,15 +5,15 @@
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/login', {
       controller: 'LoginCtrl',
-      templateUrl: 'login/login.html'
+      templateUrl: 'pages/login/login.html'
     });
     $routeProvider.whenAuthenticated('/chat', {
       templateUrl: 'chat/chat.html',
       controller: 'ChatCtrl'
     });
-    $routeProvider.whenAuthenticated('/account', {
-      templateUrl: 'account/account.html',
-      controller: 'AccountCtrl'
+    $routeProvider.whenAuthenticated('/profile', {
+      templateUrl: 'pages/profile/profile.html',
+      controller: 'ProfileCtrl'
     });
     $routeProvider.whenAuthenticated('/home', {
       templateUrl: 'home/home.html',
