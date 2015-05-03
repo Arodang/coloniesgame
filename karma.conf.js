@@ -18,6 +18,7 @@ module.exports = function(config){
       'app/pages/profile/**/*.js',
       'app/chat/**/*.js',
       'app/pages/login/**/*.js',
+      'app/pages/resources/**/*.js',
       'app/config_test.js'
     ],
 

@@ -9,7 +9,9 @@ angular.module('myApp', [
   'myApp.chat',
   'myApp.login',
   'myApp.routes',
-  'myApp.menu'
+  'myApp.menu',
+  'myApp.resources',
+  'myApp.updateUserGame'
   ])
 .run(['$rootScope', 'Auth', function($rootScope, Auth) {
     // track status of authentication

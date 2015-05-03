@@ -19,7 +19,11 @@
       templateUrl: 'home/home.html',
       controller: 'HomeCtrl'
     });
-    $routeProvider.otherwise({redirectTo: '/home'});
+    $routeProvider.whenAuthenticated('/resources', {
+      templateUrl: 'pages/resources/resources.html',
+      controller: 'ResourcesCtrl'
+    });
+    $routeProvider.otherwise({redirectTo: '/resources'});
   }]);
 })(angular);
 
