@@ -1,43 +1,42 @@
 "use strict";
 angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
 
-  .controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', function($scope, Auth, $location, fbutil) {
-    $scope.email = null;
-    $scope.pass = null;
-    $scope.confirm = null;
-    $scope.createMode = false;
+.controller('LoginCtrl', ['$scope', 'Auth', '$location', 'fbutil', '$firebaseObject', function($scope, Auth, $location, fbutil, $firebaseObject) {
+  $scope.email = null;
+  $scope.pass = null;
+  $scope.confirm = null;
+  $scope.createMode = false;
 
-    $scope.login = function(email, pass) {
-      $scope.err = null;
-      Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
-        .then(function(/* user */) {
-          $location.path('/account');
-        }, function(err) {
-          $scope.err = errMessage(err);
-        });
-    };
+  $scope.login = function(email, pass) {
+    $scope.err = null;
+    Auth.$authWithPassword({ email: email, password: pass }, {rememberMe: true})
+    .then(function(/* user */) {
+      $location.path('/account');
+    }, function(err) {
+      $scope.err = errMessage(err);
+    });
+  };
 
-    $scope.createAccount = function() {
-      $scope.err = null;
-      if( assertValidAccountProps() ) {
-        var email = $scope.email;
-        var pass = $scope.pass;
+  $scope.createAccount = function() {
+    $scope.err = null;
+    if( assertValidAccountProps() ) {
+      var email = $scope.email;
+      var pass = $scope.pass;
         // create user credentials in Firebase auth system
         Auth.$createUser({email: email, password: pass})
-          .then(function() {
+        .then(function() {
             // authenticate so we have permission to write to Firebase
             return Auth.$authWithPassword({ email: email, password: pass });
           })
-          .then(function(user) {
+        .then(function(user) {
             // create a user profile in our data store
             var userRef = fbutil.ref('users', user.uid);
-            var gameRef = fbutil.ref('game_id/user_games', user.uid);
+            createUserGameObject(user.uid);
             return fbutil.handler(function(cb) {
-              userRef.set({email: email, name: name||firstPartOfEmail(email)}, cb);
-              gameRef.set({user_id: user.uid}, cb);
+              userRef.set({email: email}, cb);
             });
           })
-          .then(function(/* user */) {
+        .then(function(/* user */) {
             // redirect to the account page
             $location.path('/account');
           }, function(err) {
@@ -46,7 +45,24 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       }
     };
 
-    function assertValidAccountProps() {
+    var createUserGameObject = function (userID) {
+      var gameRef = fbutil.ref('game_db/user_games', userID);
+      var baseGame = $firebaseObject(fbutil.ref('game_db/user_games/initial_user_game_setup'));
+      baseGame.$loaded().then(function() {
+        return fbutil.handler(function(cb) {
+          var initialDateTime = new Date();
+          gameRef.set({
+            resources: baseGame.resources,
+            last_saved_datetime: initialDateTime.getTime(),
+            buildings: baseGame.buildings,
+            business_contracts: baseGame.business_contracts,
+            fleets: baseGame.fleets
+          }, cb);
+        });
+      });
+    };
+
+    var assertValidAccountProps = function () {
       if( !$scope.email ) {
         $scope.err = 'Please enter an email address';
       }
@@ -59,18 +75,8 @@ angular.module('myApp.login', ['firebase.utils', 'firebase.auth', 'ngRoute'])
       return !$scope.err;
     }
 
-    function errMessage(err) {
+    var errMessage = function (err) {
       return angular.isObject(err) && err.code? err.code : err + '';
     }
 
-    function firstPartOfEmail(email) {
-      return ucfirst(email.substr(0, email.indexOf('@'))||'');
-    }
-
-    function ucfirst (str) {
-      // inspired by: http://kevin.vanzonneveld.net
-      str += '';
-      var f = str.charAt(0).toUpperCase();
-      return f + str.substr(1);
-    }
   }]);
