@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.account',
   'myApp.chat',
   'myApp.login',
-  'myApp.routes'
+  'myApp.routes',
+  'myApp.menu'
   ])
 .run(['$rootScope', 'Auth', function($rootScope, Auth) {
     // track status of authentication

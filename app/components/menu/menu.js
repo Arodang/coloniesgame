@@ -6,7 +6,7 @@
   app.directive('menu', function () {
     return {
       restrict: 'E',
-      template: './menu.html'
+      templateUrl: 'components/menu/menu.html'
     };
-  };
-})(angular);
+  });
+}) (angular);

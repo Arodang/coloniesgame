@@ -14,10 +14,7 @@
 <body>
 	<h3>colonies game</h3>
 	
-  <ul class="menu">
-    <li><a href="#/home">home</a></li>
-    <li><a href="#/chat">chat</a></li>
-  </ul>
+  <menu ng-show="loggedIn"></menu>
 
   <div ng-view></div>
 
@@ -44,7 +41,7 @@
 <script src="components/ngcloak/ngcloak-decorator.js"></script>
 <script src="components/reverse/reverse-filter.js"></script>
 <script src="components/security/security.js"></script>
-<script src="routes.js"></script>
+<script src="components/menu/menu.js"></script>
 
 <script src="home/home.js"></script>
 <script src="account/account.js"></script>
