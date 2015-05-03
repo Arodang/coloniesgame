@@ -18,11 +18,7 @@ describe('myApp.profile', function() {
         profileCtrl = $controller('ProfileCtrl', {$scope: $scope});
       });
     });
-
-    it('should define logout method', function() {
-      expect(typeof $scope.logout).toBe('function');
-    });
-
+    
     it('should define changePassword method', function() {
       expect(typeof $scope.changePassword).toBe('function');
     });
