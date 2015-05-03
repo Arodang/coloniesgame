@@ -12,11 +12,12 @@ module.exports = function(config){
       'test/lib/**/*.js',
       'app/app.js',
       'app/config.js',
+      'app/routes.js',
       'app/components/**/*.js',
+      'app/home/**/*.js',
       'app/account/**/*.js',
       'app/chat/**/*.js',
-      'app/home/**/*.js',
-      'app/login/**/*.js',
+      'app/pages/login/**/*.js',
       'app/config_test.js'
     ],
 
