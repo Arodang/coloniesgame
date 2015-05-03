@@ -17,11 +17,4 @@
     return $firebaseArray(ref);
   }]);
 
-  app.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/chat', {
-      templateUrl: 'chat/chat.html',
-      controller: 'ChatCtrl'
-    });
-  }]);
-
 })(angular);
